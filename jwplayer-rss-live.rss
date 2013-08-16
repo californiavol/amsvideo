@@ -1,0 +1,20 @@
+<rss version="2.0" xmlns:jwplayer="http://rss.jwpcdn.com/">
+    <channel>
+        <item>
+            <title>Live</title>
+            <description>AMS Server  RTMP m3u8 f4m</description>
+            <jwplayer:image>http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png</jwplayer:image>
+            <jwplayer:source file="rtmp://media4.saclink.csus.edu/live/livestream" label="rtmp" />
+            <jwplayer:source file="http://media4.saclink.csus.edu/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8" label="m3u8" />
+            <jwplayer:source file="http://130.86.242.216/hds-live/livepkgr/_definst_/liveevent/livestream.f4m" label="f4m" />
+        </item>                   
+        <item>
+            <title>Live</title>
+            <description>AMS Server  RTMP m3u8 f4m</description>
+            <jwplayer:image>http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png</jwplayer:image>
+            <jwplayer:source file="rtmp://media4.saclink.csus.edu/live/livestream" label="rtmp" />
+            <jwplayer:source file="http://media4.saclink.csus.edu/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8" label="m3u8" />
+            <jwplayer:source file="http://130.86.242.216/hds-live/livepkgr/_definst_/liveevent/livestream.f4m" label="f4m" />
+        </item>  
+    </channel>
+</rss>

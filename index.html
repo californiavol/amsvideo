@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+
+<script type="text/javascript" src="jwplayer/jwplayer.js"></script>
+
+
+<head>
+<meta charset="utf-8">
+
+
+</head>
+<body>
+
+<div id="mediaplayer">Loading the player ... <video width="460" height="260" controls="controls" src="http://media.music.csus.edu/hls-vod/2012_fenam/2012_11_02_event/2012_11_02_fenam_B_01.f4v.m3u8"></video></div>
+
+
+<script type="text/javascript">
+	jwplayer("mediaplayer").setup({
+		streamer: '',
+        playlist: [{
+        sources: [{ 
+            file: "rtmp://media.music.csus.edu/vod/mp4:2012_11_02_fenam_B_01.f4v"
+        },{
+            file: "http://media.music.csus.edu/hls-vod/2012_fenam/2012_11_02_event/2012_11_02_fenam_B_01.f4v.m3u8"
+        },{ 
+            file: "http://media.music.csus.edu/hds-vod/2012_fenam/2012_11_02_event/2012_11_02_fenam_B_01.f4v.f4m"
+        }],
+        image: "http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png",
+        title: "Faculty personal ownership of computing devices and the implications for the University",
+        description: "a great video"
+      },{
+        file: "rtmp://media.music.csus.edu/vod/mp4:2012_11_02_fenam_B_01.f4v",
+        image: "http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png",
+        title: "Use of Technology for Student Learning"
+      },{
+        file: "rtmp://media.music.csus.edu/vod/mp4:2012_11_02_fenam_B_01.f4v",
+        image: "http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png",
+        title: "Workplace Automation & Efficiency: Is It Right For Higher Education?"
+      },{
+        file: "rtmp://media.music.csus.edu/vod/mp4:2012_11_02_fenam_B_01.f4v",
+        image: "http://www.csus.edu/cached/Colleges/2.0/assets/media/billboard/billboard-default.png",
+        title: "Business process analysis – is this the most boring topic possible, or is it essential to the future of our campus?"
+      }],
+
+    height: 360,
+    primary: "html5",
+    width: 750,
+    listbar: {
+    position: "right",
+    size: 260
+      }
+    });
+ 
+   swfobject.embedSWF('/jwplayer/player.swf', 'player', '720', '430', '9.0.124', false, flashvars, params, attributes);
+</script>
+
+<!--
+<video
+  controls 
+  height="270" 
+  preload="none"
+  src="http://www.csus.edu/dev/html5boilerplate/video/2012_spring_address.mp4" 
+  id="myVideo"
+  width="480">
+</video> 
+-->
+
+
+
+</body>
+</html>

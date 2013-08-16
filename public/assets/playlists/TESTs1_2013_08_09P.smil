@@ -1,0 +1,12 @@
+<smil>
+	<head>
+		<meta base="rtmp://video2.csus.edu/vod/mp4:ams_rtmp_archive/2013/TESTs1" />
+	</head>
+	<body>
+		<switch>
+			<video src="TESTs1_2013_08_09A.f4v" height="640" system-bitrate="2000000" width="480" />
+			<video src="TESTs1_2013_08_09B.f4v" height="480" system-bitrate="800000" width="360" />
+			<video src="TESTs1_2013_08_09C.f4v" height="240" system-bitrate="350000" width="180" />
+		</switch>
+	</body>
+</smil>
