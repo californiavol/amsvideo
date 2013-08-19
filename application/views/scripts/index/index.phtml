@@ -1,18 +1,66 @@
-<div class="span-24 last">
-	<div class="span-17 .ss-videoplayer-container" id="osmfcontainer">
-		<?php echo $this->partial('index/_osmfplayer.phtml'); ?>
-	</div>
-    
-    <div class="span-7 last ss-coursevideos-list" id="course_video_container">
-    	<h3>Course Videos</h3>
-    	<ul>
-  			<?php echo $this->partialLoop('index/_courseVideoLoop.phtml', $this->coursevideos);?>
-       </ul>
-	</div>
+<div class="span-24 last">   
+	<div class="headingRegion span-24 last">
+	<h1>
+	<?php if ($this->course) { ?>
+	<?php	echo $this->course->course_name;
+	} else { ?>	
+		Video Courses </h1></div>
+	<?php } ?>
 </div>
 
 <div class="span-24 last">
-	
+	<div class="span-17 .ss-videoplayer-container" id="osmfcontainer">
+		<?php echo $this->partial('index/_osmfplayer.phtml'); ?>
+
+		<?php if ($this->course) { ; ?>
+		<div class="content-module">
+			<div>
+    			<p>
+    				<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index', 'cid' => $this->course->course_id, 'vid' => NULL)); ?>">
+						<?php echo $this->escape($this->course->course_number); ?>  <?php echo $this->escape($this->course->course_name); ?> Section <?php echo $this->escape($this->course->section); ?>
+					</a>
+				<br/>
+				<?php if ($this->video) { 
+							
+							echo $this->video->name; 
+							echo '&nbsp; Days ';
+							echo $this->video->days;
+							echo ' &nbsp; Duration ';
+							echo $this->video->duration;
+				
+					} ; ?>
+				<br/>
+				<?php echo $this->escape($this->course->instructor); ?>
+				<br/>
+    			<?php echo $this->escape($this->course->semester);  ?> <?php echo $this->escape($this->course->year); ?>
+        		<br/>
+        		<?php echo $this->escape($this->course->description); ?>
+        		</p>
+    		</div>
+		</div>
+		<?php } ;?>
+	</div>
+    
+    <div class="span-7 last" id="course_video_container">
+    	<h3>Course Videos</h3>
+    	<?php if ($this->course) { ; ?>
+    	<div class="content-module">
+    		<p><strong><?php echo $this->course->course_name; ?></strong></p>
+			<p>Most Recent <a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index', 'cid' => $this->recentvideo->course_id,  'vid' => $this->recentvideo->id)); ?>"><?php echo $this->recentvideo->name; ?></a></p>    		
+    		<p>Live</p>
+    	</div>
+    	<?php } ;?>
+    	<div class="ss-coursevideos-list">
+    	  <ul>
+  			<?php echo $this->partialLoop('index/_courseVideoLoop.phtml', $this->coursevideos);?>
+          </ul>
+       </div>
+	</div>
+</div>
+
+
+
+<div class="span-24 last">	
 	<div class="span-5 pagenav-container">
 		<?php echo $this->partial('index/_nav.phtml'); ?>	
 	</div>

@@ -1,4 +1,8 @@
 <li class=".ss-coursevideos-metadata">
- <h4><?php echo $this->escape($this->name); ?> Section: <?php echo $this->escape($this->class_section); ?></h4>
+ <h4>
+ 	<a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index', 'cid' => $this->course_id, 'vid' => $this->id)); ?>">
+ 		<?php echo $this->escape($this->name); ?> Section: <?php echo $this->escape($this->class_section); ?>
+ 	</a>
+ </h4>
  <p>Available: <?php echo $this->escape($this->start_dt); ?>  Duration: <?php echo $this->escape($this->duration); ?></p>
 </li>

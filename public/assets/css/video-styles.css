@@ -93,7 +93,7 @@
 
 /********************************/
 /** course videos list **/
-.ss-coursevideos-list {display:block; position:relative; overflow-y:scroll; overflow-x:hidden; height:510px;}
+.ss-coursevideos-list {display:block; position:relative; overflow-y:scroll; overflow-x:hidden; height:500px;}
 .ss-coursevideos-list ul {padding-left:0;margin-left:0;}
 .ss-coursevideos-list ul li {background-color:#262626;color:#fff; padding:1em; border-bottom:1px inset #444;}
 

@@ -5,6 +5,22 @@ class Application_Model_DbTable_Courses extends Zend_Db_Table_Abstract
 
     protected $_name = 'courses';
     
+    public function getCourses()
+    {
+		$rows = $this->fetchAll();
+		return $rows;    	
+    }
+    
+    public function getCourseById($id)
+    {
+    	if ($id == NULL) {
+			return;
+		}
+		
+		$row = $this->fetchRow($this->select()->where('course_id = ?', $id));
+		return $row;	
+    }
+    
     public function addCoursesFromXls()
     {
     	return $this->_addCourses();

@@ -5,10 +5,63 @@ class Application_Model_DbTable_Videos extends Zend_Db_Table_Abstract
 
     protected $_name = 'videos';
     
+    public function init()
+    {
+    	$this->today = new Zend_Date();
+    }    
+    
     public function addVideosFromXls()
     {
     	return $this->_addVideos();
-    }    
+    }   
+
+    public function getVideos()
+    {
+    	
+    }
+    
+    public function getVideoById($id)
+    {
+		if ($id == NULL) {
+			return;
+		}
+    	$row = $this->fetchRow($this->select()->where('id = ?', $id));
+		return $row;
+    	
+    }
+    
+    public function getVideosByCourseId($id)
+    {
+		$rows = $this->fetchAll($this->select()->where('course_id = ?', $id));
+		return $rows;
+    }
+    
+    public function getMostRecentCourseVideoAllCourses()
+    {
+		$rows = $this->fetchAll($this->select()
+    	->where('start_dt <= ?', $this->today)
+    	->group('course_id')
+    	->order('start_dt ASC')		
+		);
+		return $rows;    	
+    }
+    
+	public function getMostRecentVideo($id)
+	{
+		if ($id == NULL) {
+			return;
+		}
+		
+		$row = $this->fetchRow($this->select()
+    	->where('course_id = ?', $id)
+    	->where('start_dt <= ?', $this->today)
+    	->order('start_dt ASC')
+    	->limit(1)
+    	);
+    	
+		return $row;
+	}    
+    
     
     public function createRssPlaylist()
     {
